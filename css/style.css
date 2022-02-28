@@ -1,0 +1,10 @@
+.cursor {
+  cursor: pointer;
+}
+.mcard:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.mcard-img:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.05);
+}
