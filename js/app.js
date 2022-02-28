@@ -1,7 +1,9 @@
 const srcField = document.getElementById("src-field");
 const dataContainer = document.getElementById("dataContainer");
+const spinnerId = document.getElementById("spinner");
 // 1. fetch api by name
 const loadApi = () => {
+  spinnerControl("block");
   const url = `https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=${srcField.value}`;
   fetch(url)
     .then((res) => res.json())
@@ -27,11 +29,15 @@ const showResult = (data) => {
         <button type="button" class="btn btn-outline-danger w-50">Delete</button>
         </div>
       
-
       </div>
     </div>
     </div>
     `;
     dataContainer.appendChild(div);
   });
+  spinnerControl("none");
+};
+// 3. control spinner
+const spinnerControl = (v) => {
+  spinnerId.style.display = v;
 };
