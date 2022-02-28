@@ -6,9 +6,11 @@ const loadApi = () => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => showResult(data.player));
+  srcField.value = "";
 };
 // 2. show results
 const showResult = (data) => {
+  dataContainer.innerHTML = "";
   data.forEach((element) => {
     console.log(element);
     const div = document.createElement("div");
